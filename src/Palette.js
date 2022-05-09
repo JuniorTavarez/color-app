@@ -9,9 +9,13 @@ export default class Palette extends Component {
         super(props);
         this.state = {level: 500}
         this.changeLevel = this.changeLevel.bind(this)
+        this.changeFormat = this.changeFormat.bind(this)
     }
 changeLevel(level){
     this.setState({level})
+}
+changeFormat(e){
+    alert( e.target.value)
 }
 
     render(){
@@ -23,7 +27,7 @@ changeLevel(level){
         return (
           
             <div className="Palette">
-            <Navbar level={level} changeLevel={this.changeLevel}/>
+            <Navbar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
             {/*Navbar goes here */}
             <div className="Palette-colors"> {colorBoxes}</div>
              {/*Footer */}
